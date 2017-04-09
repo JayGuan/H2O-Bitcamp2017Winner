@@ -12,6 +12,10 @@
 		68EB501C1E9970900013702F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68EB501A1E9970900013702F /* Main.storyboard */; };
 		68EB501E1E9970900013702F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68EB501D1E9970900013702F /* Assets.xcassets */; };
 		68EB50211E9970900013702F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68EB501F1E9970900013702F /* LaunchScreen.storyboard */; };
+		68EB50291E9979900013702F /* CreateProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68EB50281E9979900013702F /* CreateProfileViewController.swift */; };
+		68EB502B1E9979AA0013702F /* CreateAvatarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68EB502A1E9979AA0013702F /* CreateAvatarViewController.swift */; };
+		68EB502D1E9979BC0013702F /* AvatarStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68EB502C1E9979BC0013702F /* AvatarStatusViewController.swift */; };
+		68EB502F1E9979D60013702F /* FireAttackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68EB502E1E9979D60013702F /* FireAttackViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,10 @@
 		68EB501D1E9970900013702F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		68EB50201E9970900013702F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		68EB50221E9970900013702F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		68EB50281E9979900013702F /* CreateProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateProfileViewController.swift; sourceTree = "<group>"; };
+		68EB502A1E9979AA0013702F /* CreateAvatarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAvatarViewController.swift; sourceTree = "<group>"; };
+		68EB502C1E9979BC0013702F /* AvatarStatusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarStatusViewController.swift; sourceTree = "<group>"; };
+		68EB502E1E9979D60013702F /* FireAttackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FireAttackViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,9 +65,13 @@
 				68EB50161E9970900013702F /* AppDelegate.swift */,
 				68EB50181E9970900013702F /* ViewController.swift */,
 				68EB501A1E9970900013702F /* Main.storyboard */,
+				68EB502E1E9979D60013702F /* FireAttackViewController.swift */,
+				68EB502C1E9979BC0013702F /* AvatarStatusViewController.swift */,
 				68EB501D1E9970900013702F /* Assets.xcassets */,
 				68EB501F1E9970900013702F /* LaunchScreen.storyboard */,
 				68EB50221E9970900013702F /* Info.plist */,
+				68EB50281E9979900013702F /* CreateProfileViewController.swift */,
+				68EB502A1E9979AA0013702F /* CreateAvatarViewController.swift */,
 			);
 			path = H2O;
 			sourceTree = "<group>";
@@ -138,6 +150,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				68EB50191E9970900013702F /* ViewController.swift in Sources */,
+				68EB502D1E9979BC0013702F /* AvatarStatusViewController.swift in Sources */,
+				68EB502F1E9979D60013702F /* FireAttackViewController.swift in Sources */,
+				68EB50291E9979900013702F /* CreateProfileViewController.swift in Sources */,
+				68EB502B1E9979AA0013702F /* CreateAvatarViewController.swift in Sources */,
 				68EB50171E9970900013702F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
