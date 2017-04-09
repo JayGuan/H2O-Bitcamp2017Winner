@@ -354,6 +354,7 @@
                     <navigationItem key="navigationItem" title="Fire Attack" id="33h-tC-anr"/>
                     <connections>
                         <outlet property="background" destination="OHP-ab-4wf" id="GPZ-pn-Ie5"/>
+                        <outlet property="fire" destination="6QF-lm-qve" id="HpK-6X-uGO"/>
                         <outlet property="img" destination="Q9k-Qy-TsN" id="sEk-GG-0L5"/>
                         <outlet property="waterImg" destination="Tqa-UE-WqX" id="jFd-2v-C8T"/>
                     </connections>

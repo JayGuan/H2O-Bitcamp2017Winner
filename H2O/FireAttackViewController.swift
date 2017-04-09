@@ -17,6 +17,7 @@ class FireAttackViewController: UIViewController {
     @IBOutlet weak var img: UIImageView!
     @IBOutlet weak var waterImg: UIImageView!
     var cheerPlayer = AVAudioPlayer()
+    @IBOutlet weak var fire: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,8 +49,18 @@ class FireAttackViewController: UIViewController {
         let center = UNUserNotificationCenter.current()
         center.requestAuthorization(options: [.alert, .sound], completionHandler: {didAllow, error in})
         center.add(request, withCompletionHandler: nil)
+        animateView(v: fire, y:520)
+        
     }
 
+    func animateView(v: UIView, y:Int){
+        print("animate called")
+        var speed = 1.4
+        UIView.animate(withDuration: TimeInterval(speed), delay: 0, options: .allowUserInteraction, animations: {
+            v.frame = v.frame.offsetBy(dx: 0, dy: -100)
+        }, completion: nil )
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
