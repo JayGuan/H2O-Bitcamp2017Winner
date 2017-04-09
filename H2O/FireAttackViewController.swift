@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 class FireAttackViewController: UIViewController {
     var i = 1
@@ -21,6 +22,20 @@ class FireAttackViewController: UIViewController {
         let pressDownGes = UILongPressGestureRecognizer.init(target: self, action: #selector(pressedDown))
         img.addGestureRecognizer(pressDownGes)
         // Do any additional setup after loading the view.
+        
+        let content = UNMutableNotificationContent()
+        content.title = NSString.localizedUserNotificationString(forKey: "Dehydration!", arguments: nil)
+        content.body = NSString.localizedUserNotificationString(forKey: "Drink some water", arguments: nil)
+        content.sound = UNNotificationSound.default()
+        
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+        
+        // create the request object
+        let request = UNNotificationRequest(identifier: "5 seconds", content: content, trigger: trigger)
+        // ebale or disable features based on authorization
+        let center = UNUserNotificationCenter.current()
+        center.requestAuthorization(options: [.alert, .sound], completionHandler: {didAllow, error in})
+        center.add(request, withCompletionHandler: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,6 +49,7 @@ class FireAttackViewController: UIViewController {
         }
         else if _sender.state == UIGestureRecognizerState.ended {
            print("finished")
+        
         }
     }
 

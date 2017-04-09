@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class CreateAvatarViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var name: UITextField!
@@ -41,6 +42,8 @@ class CreateAvatarViewController: UIViewController, UITextFieldDelegate {
             print("go to status")
             if let dvc = segue.destination as? AvatarStatusViewController {
                 dvc.i = self.i
+                dvc.name = self.nameInfo
+                print("name: \(self.nameInfo)")
             }
         }
     }
@@ -67,6 +70,7 @@ class CreateAvatarViewController: UIViewController, UITextFieldDelegate {
             
             present(alert, animated: true, completion: nil)
         }
+        
     }
     /*
     // MARK: - Navigation

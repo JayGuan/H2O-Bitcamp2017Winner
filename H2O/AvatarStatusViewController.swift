@@ -10,6 +10,7 @@ import UIKit
 
 class AvatarStatusViewController: UIViewController {
     var i = 1
+    var name = ""
     
     @IBOutlet weak var img: UIImageView!
     override func viewDidLoad() {
@@ -17,6 +18,7 @@ class AvatarStatusViewController: UIViewController {
         print("avatar status page: i [\(i)]")
         // Do any additional setup after loading the view.
         img.image = UIImage(named:"Asset \(i)")
+        self.title = "\(name)'s Health"
     }
 
     override func didReceiveMemoryWarning() {
