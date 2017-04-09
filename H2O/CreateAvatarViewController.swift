@@ -15,6 +15,7 @@ class CreateAvatarViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var img: UIImageView!
     var i = 1
     var nameInfo = ""
+    var waterWeight = 0.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +44,7 @@ class CreateAvatarViewController: UIViewController, UITextFieldDelegate {
             if let dvc = segue.destination as? AvatarStatusViewController {
                 dvc.i = self.i
                 dvc.name = self.nameInfo
+                dvc.waterWeight = self.waterWeight
                 print("name: \(self.nameInfo)")
             }
         }
@@ -70,7 +72,6 @@ class CreateAvatarViewController: UIViewController, UITextFieldDelegate {
             
             present(alert, animated: true, completion: nil)
         }
-        
     }
     /*
     // MARK: - Navigation

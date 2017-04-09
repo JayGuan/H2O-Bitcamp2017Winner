@@ -12,6 +12,7 @@ import UserNotifications
 class FireAttackViewController: UIViewController {
     var i = 1
     
+    @IBOutlet weak var background: UIImageView!
     @IBOutlet weak var img: UIImageView!
     @IBOutlet weak var waterImg: UIImageView!
     
@@ -24,7 +25,7 @@ class FireAttackViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         let content = UNMutableNotificationContent()
-        content.title = NSString.localizedUserNotificationString(forKey: "Dehydration!", arguments: nil)
+        content.title = NSString.localizedUserNotificationString(forKey: "Oh NO!", arguments: nil)
         content.body = NSString.localizedUserNotificationString(forKey: "Drink some water", arguments: nil)
         content.sound = UNNotificationSound.default()
         
@@ -49,7 +50,8 @@ class FireAttackViewController: UIViewController {
         }
         else if _sender.state == UIGestureRecognizerState.ended {
            print("finished")
-        
+            //TODO check condition then change background
+            background.image = UIImage(named: "bk1")
         }
     }
 

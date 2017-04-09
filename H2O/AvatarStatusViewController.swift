@@ -11,14 +11,20 @@ import UIKit
 class AvatarStatusViewController: UIViewController {
     var i = 1
     var name = ""
+    var waterWeight = 0.0
+    +
     
+    @IBOutlet weak var result: UILabel!
     @IBOutlet weak var img: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        var convert:Int = Int(waterWeight)
         print("avatar status page: i [\(i)]")
+        print("water weight \(convert)")
         // Do any additional setup after loading the view.
         img.image = UIImage(named:"Asset \(i)")
         self.title = "\(name)'s Health"
+        self.result.text = "\(convert) ounces"
     }
 
     override func didReceiveMemoryWarning() {

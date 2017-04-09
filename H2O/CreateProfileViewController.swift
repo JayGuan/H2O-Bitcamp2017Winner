@@ -12,6 +12,8 @@ class CreateProfileViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var age: UITextField!
     @IBOutlet weak var weight: UITextField!
     @IBOutlet weak var workoutHours: UITextField!
+    
+    var waterWeight = 0.0
     var hourInfo = 0.0
     var weightInfo = 0.0
     var ageInfo = 0
@@ -79,6 +81,7 @@ class CreateProfileViewController: UIViewController, UITextFieldDelegate {
             ready = false
         }
         if ready {
+            waterWeight = Double(weightInfo)*2/3
             var userDefaults = UserDefaults.standard
             userDefaults.set(hourInfo, forKey:"hourInfo")
             userDefaults.set(weightInfo, forKey:"weightInfo")
@@ -95,7 +98,7 @@ class CreateProfileViewController: UIViewController, UITextFieldDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "createAvatar" {
             if let dvc = segue.destination as?CreateAvatarViewController {
-                
+                dvc.waterWeight = self.waterWeight
             }
         }
     }
