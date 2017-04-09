@@ -8,6 +8,7 @@
 
 import UIKit
 import UserNotifications
+import AVFoundation
 
 class FireAttackViewController: UIViewController {
     var i = 1
@@ -15,9 +16,19 @@ class FireAttackViewController: UIViewController {
     @IBOutlet weak var background: UIImageView!
     @IBOutlet weak var img: UIImageView!
     @IBOutlet weak var waterImg: UIImageView!
+    var cheerPlayer = AVAudioPlayer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let audioPath = Bundle.main.path(forResource: "cheer", ofType: "mp3")
+        
+        do{
+            cheerPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: audioPath!))
+        }
+        catch{
+            
+        }
+        
           print("fire page: i [\(i)]")
         waterImg.image = UIImage(named:"Asset \(i)anoBackground")
         let pressDownGes = UILongPressGestureRecognizer.init(target: self, action: #selector(pressedDown))
@@ -52,6 +63,7 @@ class FireAttackViewController: UIViewController {
            print("finished")
             //TODO check condition then change background
             background.image = UIImage(named: "bk1")
+            cheerPlayer.play()
         }
     }
 

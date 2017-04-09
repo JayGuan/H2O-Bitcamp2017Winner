@@ -15,6 +15,8 @@ class AvatarStatusViewController: UIViewController {
     var timer: Timer? = nil
     var timeCount = 0
     let reminder = 10
+    var score = 0
+    var healthPercent = 100
     
     @IBOutlet weak var result: UILabel!
     @IBOutlet weak var img: UIImageView!
@@ -33,6 +35,8 @@ class AvatarStatusViewController: UIViewController {
         img.image = UIImage(named:"Asset \(i)")
         self.title = "\(name)'s Health"
         self.result.text = "\(convert) ounces"
+        
+        
     }
 
     func updateTime() {
@@ -41,7 +45,7 @@ class AvatarStatusViewController: UIViewController {
         if timeCount == reminder {
             print("timer eqaul to reminder")
             stop()
-            let alert = UIAlertController(title: "20% water loss", message: "Do you want to drink some water?", preferredStyle: .alert)
+            let alert = UIAlertController(title: "\(name)'s Health is below 40%", message: "Get some water for \(name)", preferredStyle: .alert)
             
             let no = UIAlertAction(title: "No", style: .default, handler:
                 {
@@ -57,6 +61,26 @@ class AvatarStatusViewController: UIViewController {
             alert.addAction(no)
             alert.addAction(yes)
             present(alert, animated: true, completion: nil)
+        }
+        let date = Date()
+        let calendar = Calendar.current
+        let hour = calendar.component(.hour, from: date)
+        let minutes = calendar.component(.minute, from: date)
+        if hour == 21 && minutes == 59 {
+            // at the end of the day before people go to bed, check their progress
+            switch healthPercent {
+            case 90...100:
+                score += 5
+            case 70...90:
+                score += 4
+            case 50...70:
+                score += 3
+            case 30...50:
+                score += 2
+            case 0...30:
+                score -= 3
+            default: break
+            }
         }
     }
     
