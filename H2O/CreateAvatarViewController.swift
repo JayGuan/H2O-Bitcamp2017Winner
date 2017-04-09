@@ -29,13 +29,17 @@ class CreateAvatarViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func rightArrowClicked(_ sender: UIButton) {
-        i += 1
-        img.image = UIImage(named: "Asset \(i)")
+        if i < 3 {
+            i += 1
+            img.image = UIImage(named: "Asset \(i)")
+        }
     }
     
     @IBAction func leftArrowClicked(_ sender: UIButton) {
-        i -= 1
-        img.image = UIImage(named: "Asset \(i)")
+        if i > 1 {
+            i -= 1
+            img.image = UIImage(named: "Asset \(i)")
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
